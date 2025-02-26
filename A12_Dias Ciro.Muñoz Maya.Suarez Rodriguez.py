@@ -53,7 +53,7 @@ for img in os.listdir("ImagenesTaller2"):
     if img_data is None: continue
 
     h, w = img_data.shape[:2]
-    img_resized = cv.resize(img_data, (int(w * (100 / h)), 100))
+    img_resized = cv.resize(img_data, (int(w * (100 / h)), 100), interpolation = cv.INTER_LINEAR)
 
     cv.imwrite(f"imagenes_redimensionadas/{os.path.splitext(img)[0]}.png", img_resized)
 
